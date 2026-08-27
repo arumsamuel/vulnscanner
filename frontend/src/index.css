@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-navy-950 text-slate-100;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  ::selection { @apply bg-copper-500/30 text-copper-400; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-navy-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-navy-600 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-navy-500; }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-navy-800/60 backdrop-blur-xl border border-navy-700/50 rounded-xl;
+  }
+  .btn-primary {
+    @apply px-5 py-2.5 bg-copper-500 hover:bg-copper-600 text-navy-950 font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-copper-500/20 hover:shadow-copper-500/30 active:scale-95;
+  }
+  .btn-secondary {
+    @apply px-5 py-2.5 bg-navy-700 hover:bg-navy-600 text-slate-200 font-medium rounded-lg transition-all duration-200 border border-navy-600 hover:border-navy-500 active:scale-95;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 bg-navy-800 border border-navy-600 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-copper-500 focus:ring-1 focus:ring-copper-500/50 transition-all;
+  }
+  .severity-critical { @apply bg-danger/10 text-danger border-danger/30; }
+  .severity-high { @apply bg-warning/10 text-warning border-warning/30; }
+  .severity-medium { @apply bg-copper-500/10 text-copper-400 border-copper-500/30; }
+  .severity-low { @apply bg-info/10 text-info border-info/30; }
+  .severity-info { @apply bg-slate-500/10 text-slate-400 border-slate-500/30; }
+}
